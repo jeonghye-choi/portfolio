@@ -1,54 +1,30 @@
-import { useCallback, useState } from 'react'
 import Nav from '@/components/Nav'
 import Landing from '@/pages/Landing'
-import WorkCatalogue from '@/pages/WorkCatalogue'
+import Work from '@/pages/Work'
 import WorkDetail from '@/pages/WorkDetail'
-import WritingList from '@/pages/WritingList'
+import Writing from '@/pages/Writing'
 import Post from '@/pages/Post'
 import Activities from '@/pages/Activities'
 import Moments from '@/pages/Moments'
 import { socialLinks } from '@/data'
-
-export type Route =
-  | { name: 'home' }
-  | { name: 'work' }
-  | { name: 'work-detail'; co: string }
-  | { name: 'writing' }
-  | { name: 'post'; slug: string }
-  | { name: 'activities' }
-  | { name: 'moments' }
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 export default function App() {
-  const [route, setRoute] = useState<Route>({ name: 'home' })
-  const [phase, setPhase] = useState<'in' | 'out'>('in')
-
-  const navigate = useCallback((r: Route) => {
-    setPhase('out')
-    setTimeout(() => {
-      setRoute(r)
-      window.scrollTo(0, 0)
-      setPhase('in')
-    }, 220)
-  }, [])
-
-  const activeName =
-    route.name === 'work-detail' ? 'work' :
-    route.name === 'post' ? 'writing' :
-    route.name
-
   return (
-    <div className={'site' + (route.name === 'home' ? ' is-home' : '')}>
-      <Nav active={activeName} onNav={navigate} />
-      <main className={'site-main ' + (phase === 'out' ? 'is-out' : 'is-in')}>
-        {route.name === 'home'        && <Landing onNav={navigate} />}
-        {route.name === 'work'        && <WorkCatalogue onNav={navigate} />}
-        {route.name === 'work-detail' && <WorkDetail co={route.co} onNav={navigate} />}
-        {route.name === 'writing'     && <WritingList onNav={navigate} />}
-        {route.name === 'post'        && <Post slug={route.slug} onNav={navigate} />}
-        {route.name === 'activities'  && <Activities />}
-        {route.name === 'moments'     && <Moments />}
-      </main>
-      {route.name !== 'home' && (
+    <BrowserRouter>
+      <div className="site">
+        <Nav />
+        <main className="site-main">
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/work/:id" element={<WorkDetail />} />
+            <Route path="/writing" element={<Writing />} />
+            <Route path="/writing/:id" element={<Post />} />
+            <Route path="/activities" element={<Activities />} />
+            <Route path="/moments" element={<Moments />} />
+          </Routes>
+        </main>
         <footer className="site-foot">
           <span>Jen Choi (Jeonghye Choi) · London</span>
           <span className="dot-sep">·</span>
@@ -62,7 +38,7 @@ export default function App() {
             GitHub
           </a>
         </footer>
-      )}
-    </div>
+      </div>
+    </BrowserRouter>
   )
 }

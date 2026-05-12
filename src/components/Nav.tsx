@@ -1,22 +1,20 @@
-import type { Route } from '@/App'
 import { socialLinks } from '@/data'
+import { useLocation, useNavigate } from 'react-router-dom';
 
-interface Props {
-  active: string
-  onNav: (r: Route) => void
-}
+export default function Nav() {
+  const navigate = useNavigate()
+  const location = useLocation()
 
-export default function Nav({ active, onNav }: Props) {
-  const linkCls = (n: string) => 'navlink' + (active === n ? ' active' : '')
+  const linkCls = (n: string) => 'navlink' + (location.pathname.startsWith('/' + n) ? ' active' : '')
 
   return (
     <nav className="site-nav">
-      <a className="brand" href="#home" onClick={(e) => { e.preventDefault(); onNav({ name: 'home' }) }}>Jen Choi</a>
+      <a className="brand" onClick={() => navigate('/')}>Jen Choi</a>
       <div className="navlinks">
-        <a className={linkCls('work')} href="#work" onClick={(e) => { e.preventDefault(); onNav({ name: 'work' }) }}>work</a>
-        <a className={linkCls('writing')} href="#writing" onClick={(e) => { e.preventDefault(); onNav({ name: 'writing' }) }}>writing</a>
-        <a className={linkCls('activities')} href="#activities" onClick={(e) => { e.preventDefault(); onNav({ name: 'activities' }) }}>activities</a>
-        <a className={linkCls('moments')} href="#moments" onClick={(e) => { e.preventDefault(); onNav({ name: 'moments' }) }}>moments</a>
+        <a className={linkCls('work')} onClick={() => { navigate('/work') }}>work</a>
+        <a className={linkCls('writing')} onClick={() => { navigate('/writing') }}>writing</a>
+        <a className={linkCls('activities')} onClick={() => { navigate('/activities') }}>activities</a>
+        <a className={linkCls('moments')} onClick={() => { navigate('/moments') }}>moments</a>
       </div>
       <div className="nav-icons">
         <a href={'mailto:' + socialLinks.email} className="nav-icon" title="Email" aria-label="Email">

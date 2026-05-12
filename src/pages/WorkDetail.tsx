@@ -1,18 +1,15 @@
 import { works } from '@/data'
 import StackRow from '@/components/StackRow'
-import type { Route } from '@/App'
+import { useNavigate, useParams } from 'react-router-dom';
 
-interface Props {
-  co: string
-  onNav: (r: Route) => void
-}
-
-export default function WorkDetail({ co, onNav }: Props) {
-  const company = works.find(c => c.id === co) ?? works[0]!
+export default function WorkDetail() {
+  const { id } = useParams()
+  const navigate = useNavigate()
+  const company = works.find(c => c.id === id) ?? works[0]!
 
   return (
     <div className="page">
-      <a className="back-link" onClick={() => onNav({ name: 'work' })}>← all work</a>
+      <a className="back-link" onClick={() => navigate('/work')}>← all work</a>
       <header className="co-header">
         <div className="co-meta">{company.startDate} - {company.endDate} · {company.position.toUpperCase()}</div>
         <h1 className="co-name">{company.company}</h1>

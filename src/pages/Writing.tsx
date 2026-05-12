@@ -1,11 +1,9 @@
 import { posts } from '@/data'
-import type { Route } from '@/App'
+import { useNavigate } from 'react-router-dom';
 
-interface Props {
-  onNav: (r: Route) => void
-}
+export default function Writing() {
+  const navigate = useNavigate();
 
-export default function WritingList({ onNav }: Props) {
   return (
     <div className="page page-narrow">
       <div className="page-label">writing</div>
@@ -17,7 +15,7 @@ export default function WritingList({ onNav }: Props) {
           <a
             key={p.id}
             className="writerow"
-            onClick={() => onNav({ name: 'post', slug: p.id })}
+            onClick={() => navigate(`/writing/${p.id}`)}
           >
             <span className="w-date">— {p.date}</span>
             <span>

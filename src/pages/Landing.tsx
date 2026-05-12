@@ -1,12 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import DotAnimation from '@/components/DotAnimation'
-import type { Route } from '@/App'
+import { useNavigate } from 'react-router-dom';
 
-interface Props {
-  onNav: (r: Route) => void
-}
-
-export default function Landing({ onNav }: Props) {
+export default function Landing() {
+  const navigate = useNavigate()
   const [size, setSize] = useState({ w: 1200, h: 480 })
   const wrapRef = useRef<HTMLDivElement>(null)
 
@@ -37,7 +34,7 @@ export default function Landing({ onNav }: Props) {
           <DotAnimation
             width={size.w}
             height={size.h}
-            onNavigate={(r) => onNav({ name: r } as Route)}
+            onNavigate={(r) => navigate(`/${r}`)}
           />
         )}
       </div>

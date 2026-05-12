@@ -1,11 +1,9 @@
-import type { Route } from '@/App'
 import { works } from '@/data'
+import { useNavigate } from 'react-router-dom';
 
-interface Props {
-  onNav: (r: Route) => void
-}
+export default function Work() {
+  const navigate = useNavigate()
 
-export default function WorkCatalogue({ onNav }: Props) {
   return (
     <div className="page">
       <div className="page-label">work</div>
@@ -17,7 +15,7 @@ export default function WorkCatalogue({ onNav }: Props) {
           <a
             key={c.id}
             className="cat-row"
-            onClick={() => onNav({ name: 'work-detail', co: c.id })}
+            onClick={() => navigate(`/work/${c.id}`)}
           >
             <span className="cat-yr">{c.startDate} - {c.endDate}</span>
             <span className="cat-co">{c.company}</span>

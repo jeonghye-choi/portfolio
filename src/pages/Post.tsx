@@ -1,28 +1,25 @@
 import { posts } from '@/data'
-import type { Route } from '@/App'
+import { useNavigate, useParams } from 'react-router-dom';
 
-interface Props {
-  slug: string
-  onNav: (r: Route) => void
-}
-
-export default function Post({ slug, onNav }: Props) {
-  const i = posts.findIndex(p => p.id === slug)
+export default function Post() {
+  const { id } = useParams()
+  const i = posts.findIndex(p => p.id === id)
   const post = posts[i] ?? posts[0]!
   const prev = posts[(i - 1 + posts.length) % posts.length]!
   const next = posts[(i + 1) % posts.length]!
+  const navigate = useNavigate()
 
   return (
     <article className="post">
-      <a className="back-link" onClick={() => onNav({ name: 'writing' })}>← all posts</a>
+      <a className="back-link" onClick={() => navigate('/writing')}>← all posts</a>
       <div className="post-date">— {post.date}</div>
       <h1 className="post-title">{post.title}</h1>
       <div className="post-body">
         {post.content}
       </div>
       <div className="post-foot">
-        <a onClick={() => onNav({ name: 'post', slug: prev.id })}>← {prev.title}</a>
-        <a onClick={() => onNav({ name: 'post', slug: next.id })}>{next.title} →</a>
+        <a onClick={() => navigate(`/writing/${prev.id}`)}>← {prev.title}</a>
+        <a onClick={() => navigate(`/writing/${next.id}`)}>{next.title} →</a>
       </div>
     </article>
   )
