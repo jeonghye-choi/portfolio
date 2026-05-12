@@ -1,4 +1,4 @@
-import { POSTS } from '../../data'
+import { posts } from '../../data'
 import type { Route } from '../../App'
 
 interface Props {
@@ -7,10 +7,10 @@ interface Props {
 }
 
 export default function Post({ slug, onNav }: Props) {
-  const i = POSTS.findIndex(p => p.slug === slug)
-  const post = POSTS[i] ?? POSTS[0]!
-  const prev = POSTS[(i - 1 + POSTS.length) % POSTS.length]!
-  const next = POSTS[(i + 1) % POSTS.length]!
+  const i = posts.findIndex(p => p.id === slug)
+  const post = posts[i] ?? posts[0]!
+  const prev = posts[(i - 1 + posts.length) % posts.length]!
+  const next = posts[(i + 1) % posts.length]!
 
   return (
     <article className="post">
@@ -18,11 +18,11 @@ export default function Post({ slug, onNav }: Props) {
       <div className="post-date">— {post.date}</div>
       <h1 className="post-title">{post.title}</h1>
       <div className="post-body">
-        {post.body.map((p, k) => <p key={k}>{p}</p>)}
+        {post.content}
       </div>
       <div className="post-foot">
-        <a onClick={() => onNav({ name: 'post', slug: prev.slug })}>← {prev.title}</a>
-        <a onClick={() => onNav({ name: 'post', slug: next.slug })}>{next.title} →</a>
+        <a onClick={() => onNav({ name: 'post', slug: prev.id })}>← {prev.title}</a>
+        <a onClick={() => onNav({ name: 'post', slug: next.id })}>{next.title} →</a>
       </div>
     </article>
   )

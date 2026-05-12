@@ -1,4 +1,4 @@
-import { POSTS } from '../../data'
+import { posts } from '../../data'
 import type { Route } from '../../App'
 
 interface Props {
@@ -13,16 +13,15 @@ export default function WritingList({ onNav }: Props) {
         Notes on engineering, design, and the gap between them.
       </p>
       <div className="writelist">
-        {POSTS.map(p => (
+        {posts.map(p => (
           <a
-            key={p.slug}
+            key={p.id}
             className="writerow"
-            onClick={() => onNav({ name: 'post', slug: p.slug })}
+            onClick={() => onNav({ name: 'post', slug: p.id })}
           >
             <span className="w-date">— {p.date}</span>
             <span>
               <span className="w-title">{p.title}</span>
-              <span className="w-desc">{p.desc}</span>
             </span>
           </a>
         ))}

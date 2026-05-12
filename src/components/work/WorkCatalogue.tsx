@@ -1,5 +1,5 @@
-import { COMPANIES } from '../../data'
 import type { Route } from '../../App'
+import { works } from '../../data'
 
 interface Props {
   onNav: (r: Route) => void
@@ -13,16 +13,16 @@ export default function WorkCatalogue({ onNav }: Props) {
         Four places, eight years, one practice. Click any role to read the full story.
       </p>
       <div className="catalogue">
-        {COMPANIES.map(c => (
+        {works.map(c => (
           <a
             key={c.id}
             className="cat-row"
             onClick={() => onNav({ name: 'work-detail', co: c.id })}
           >
-            <span className="cat-yr">{(c.period.match(/\d{4}/g) || []).join(' – ')}</span>
-            <span className="cat-co">{c.name}</span>
-            <span className="cat-rl">{c.role}</span>
-            <span className="cat-summary">{c.summary}</span>
+            <span className="cat-yr">{c.startDate} - {c.endDate}</span>
+            <span className="cat-co">{c.company}</span>
+            <span className="cat-rl">{c.position}</span>
+            <span className="cat-summary">{c.description}</span>
             <span className="cat-go">read →</span>
           </a>
         ))}

@@ -6,8 +6,8 @@ import WorkDetail from './components/work/WorkDetail'
 import WritingList from './components/writing/WritingList'
 import Post from './components/writing/Post'
 import Activities from './components/activities/Activities'
-import Dots from './components/dots/Dots'
-import { EMAIL } from './data'
+import Moments from './components/moments/Moments'
+import { socialLinks } from './data'
 
 export type Route =
   | { name: 'home' }
@@ -16,7 +16,7 @@ export type Route =
   | { name: 'writing' }
   | { name: 'post'; slug: string }
   | { name: 'activities' }
-  | { name: 'dots' }
+  | { name: 'moments' }
 
 export default function App() {
   const [route, setRoute] = useState<Route>({ name: 'home' })
@@ -46,17 +46,21 @@ export default function App() {
         {route.name === 'writing'     && <WritingList onNav={navigate} />}
         {route.name === 'post'        && <Post slug={route.slug} onNav={navigate} />}
         {route.name === 'activities'  && <Activities />}
-        {route.name === 'dots'        && <Dots />}
+        {route.name === 'moments'     && <Moments />}
       </main>
       {route.name !== 'home' && (
         <footer className="site-foot">
           <span>Jen Choi (Jeonghye Choi) · London</span>
           <span className="dot-sep">·</span>
-          <a href={'mailto:' + EMAIL}>email</a>
+          <a href={'mailto:' + socialLinks.email}>email</a>
           <span className="dot-sep">·</span>
-          <a href="#linkedin">LinkedIn</a>
+          <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
           <span className="dot-sep">·</span>
-          <a href="#github">GitHub</a>
+          <a href={socialLinks.github} target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
         </footer>
       )}
     </div>

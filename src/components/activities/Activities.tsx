@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ACTIVITIES } from '../../data'
+import { activities } from '../../data'
 
 export default function Activities() {
   const [open, setOpen] = useState<number | null>(null)
@@ -11,7 +11,7 @@ export default function Activities() {
         Things I do that aren't a full-time role. The angle is different — not "what did I build" but "how do I grow."
       </p>
       <div className="actlist">
-        {ACTIVITIES.map((a, i) => {
+        {activities.map((a, i) => {
           const isOpen = open === i
           return (
             <div key={i} className={'actrow' + (isOpen ? ' is-open' : '')}>
@@ -21,16 +21,18 @@ export default function Activities() {
                 aria-expanded={isOpen}
               >
                 <span className="act-num">{String(i + 1).padStart(2, '0')}</span>
-                <span className="act-when">{a.when}</span>
+                <span className="act-when">{a.startDate} - {a.endDate}</span>
                 <span className="act-body">
                   <span className="act-title">{a.title}</span>
-                  <span className="act-desc">{a.desc}</span>
+                  <span className="act-desc">{a.intro}</span>
                 </span>
                 <span className="act-toggle" aria-hidden="true">{isOpen ? '−' : '+'}</span>
               </button>
               {isOpen && (
                 <div className="act-detail">
-                  {a.details.map((d, k) => <p key={k}>{d}</p>)}
+                  {a.description.split('\n\n').map((para, j) => (
+                    <p key={j}>{para}</p>
+                  ))}
                 </div>
               )}
             </div>
