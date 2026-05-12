@@ -1,4 +1,4 @@
-import type { SocialLinks } from '../types'
+import type { SocialLinks } from '@/types'
 
 export const socialLinks: SocialLinks = {
   email: 'myemail@gmail.com',

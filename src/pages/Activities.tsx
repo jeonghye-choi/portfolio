@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { activities } from '../../data'
+import { activities } from '@/data'
 
 export default function Activities() {
   const [open, setOpen] = useState<number | null>(null)

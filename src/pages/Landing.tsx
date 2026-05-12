@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import DotAnimation from './DotAnimation'
-import type { Route } from '../App'
+import DotAnimation from '@/components/DotAnimation'
+import type { Route } from '@/App'
 
 interface Props {
   onNav: (r: Route) => void

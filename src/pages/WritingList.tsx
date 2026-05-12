@@ -1,5 +1,5 @@
-import { posts } from '../../data'
-import type { Route } from '../../App'
+import { posts } from '@/data'
+import type { Route } from '@/App'
 
 interface Props {
   onNav: (r: Route) => void

@@ -1,6 +1,6 @@
-import { works } from '../../data'
-import StackRow from './StackRow'
-import type { Route } from '../../App'
+import { works } from '@/data'
+import StackRow from '@/components/StackRow'
+import type { Route } from '@/App'
 
 interface Props {
   co: string

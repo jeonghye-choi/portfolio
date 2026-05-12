@@ -1,13 +1,13 @@
 import { useCallback, useState } from 'react'
-import Nav from './components/Nav'
-import Landing from './components/Landing'
-import WorkCatalogue from './components/work/WorkCatalogue'
-import WorkDetail from './components/work/WorkDetail'
-import WritingList from './components/writing/WritingList'
-import Post from './components/writing/Post'
-import Activities from './components/activities/Activities'
-import Moments from './components/moments/Moments'
-import { socialLinks } from './data'
+import Nav from '@/components/Nav'
+import Landing from '@/pages/Landing'
+import WorkCatalogue from '@/pages/WorkCatalogue'
+import WorkDetail from '@/pages/WorkDetail'
+import WritingList from '@/pages/WritingList'
+import Post from '@/pages/Post'
+import Activities from '@/pages/Activities'
+import Moments from '@/pages/Moments'
+import { socialLinks } from '@/data'
 
 export type Route =
   | { name: 'home' }

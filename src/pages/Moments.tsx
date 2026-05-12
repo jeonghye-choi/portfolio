@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { moments } from '../../data'
-import type { Moment as MomentType } from '../../types'
+import { moments } from '@/data'
+import type { Moment as MomentType } from '@/types'
 
 export default function Moments() {
   return (

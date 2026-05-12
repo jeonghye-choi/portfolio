@@ -1,5 +1,5 @@
-import type { Route } from '../App'
-import { socialLinks } from '../data'
+import type { Route } from '@/App'
+import { socialLinks } from '@/data'
 
 interface Props {
   active: string

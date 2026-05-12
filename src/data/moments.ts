@@ -1,4 +1,4 @@
-import type { Moment } from '../types'
+import type { Moment } from '@/types'
 
 const momentImageBaseUrl = '/moments/'
 
