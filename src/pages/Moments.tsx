@@ -6,9 +6,6 @@ export default function Moments() {
   return (
     <div className="page">
       <div className="page-label">moments</div>
-      <p className="page-intro page-intro-quiet">
-        These are the moments I didn't plan.
-      </p>
       <div className="moments">
         {moments.map((m) => (
           <MomentCard key={m.id} {...m} />

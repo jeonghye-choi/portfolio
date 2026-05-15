@@ -7,9 +7,6 @@ export default function Activities() {
   return (
     <div className="page">
       <div className="page-label">activities</div>
-      <p className="page-intro">
-        Things I do that aren't a full-time role. The angle is different — not "what did I build" but "how do I grow."
-      </p>
       <div className="actlist">
         {activities.map((a, i) => {
           const isOpen = open === i

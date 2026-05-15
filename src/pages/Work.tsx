@@ -7,9 +7,6 @@ export default function Work() {
   return (
     <div className="page">
       <div className="page-label">work</div>
-      <p className="page-intro">
-        Four places, eight years, one practice. Click any role to read the full story.
-      </p>
       <div className="catalogue">
         {works.map(c => (
           <a
