@@ -2,8 +2,8 @@ import Nav from '@/components/Nav'
 import Landing from '@/pages/Landing'
 import Work from '@/pages/Work'
 import WorkDetail from '@/pages/WorkDetail'
-import Writing from '@/pages/Writing'
-import Post from '@/pages/Post'
+import Posts from '@/pages/Posts'
+import PostDetail from '@/pages/PostDetail'
 import Activities from '@/pages/Activities'
 import Moments from '@/pages/Moments'
 import { socialLinks } from '@/data'
@@ -19,8 +19,8 @@ export default function App() {
             <Route path="/" element={<Landing />} />
             <Route path="/work" element={<Work />} />
             <Route path="/work/:id" element={<WorkDetail />} />
-            <Route path="/writing" element={<Writing />} />
-            <Route path="/writing/:id" element={<Post />} />
+          {/* <Route path="/posts" element={<Posts />} />
+          <Route path="/posts/:id" element={<PostDetail />} /> */}
             <Route path="/activities" element={<Activities />} />
             <Route path="/moments" element={<Moments />} />
           </Routes>

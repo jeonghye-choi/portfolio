@@ -12,7 +12,7 @@ export default function Nav() {
       <a className="brand" onClick={() => navigate('/')}>Jen Choi</a>
       <div className="navlinks">
         <a className={linkCls('work')} onClick={() => { navigate('/work') }}>work</a>
-        <a className={linkCls('writing')} onClick={() => { navigate('/writing') }}>writing</a>
+        {/* <a className={linkCls('posts')} onClick={() => { navigate('/posts') }}>posts</a> */}
         <a className={linkCls('activities')} onClick={() => { navigate('/activities') }}>activities</a>
         <a className={linkCls('moments')} onClick={() => { navigate('/moments') }}>moments</a>
       </div>

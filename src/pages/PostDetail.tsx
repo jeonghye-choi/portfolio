@@ -1,7 +1,7 @@
 import { posts } from '@/data'
 import { useNavigate, useParams } from 'react-router-dom';
 
-export default function Post() {
+export default function PostDetail() {
   const { id } = useParams()
   const i = posts.findIndex(p => p.id === id)
   const post = posts[i] ?? posts[0]!
@@ -11,15 +11,15 @@ export default function Post() {
 
   return (
     <article className="post">
-      <a className="back-link" onClick={() => navigate('/writing')}>← all posts</a>
+      <a className="back-link" onClick={() => navigate('/posts')}>← all posts</a>
       <div className="post-date">— {post.date}</div>
       <h1 className="post-title">{post.title}</h1>
       <div className="post-body">
         {post.content}
       </div>
       <div className="post-foot">
-        <a onClick={() => navigate(`/writing/${prev.id}`)}>← {prev.title}</a>
-        <a onClick={() => navigate(`/writing/${next.id}`)}>{next.title} →</a>
+        <a onClick={() => navigate(`/posts/${prev.id}`)}>← {prev.title}</a>
+        <a onClick={() => navigate(`/posts/${next.id}`)}>{next.title} →</a>
       </div>
     </article>
   )

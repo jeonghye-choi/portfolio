@@ -36,26 +36,26 @@ const MICRO_R = 2
 const DOT_DEFS: DotDef[] = [
   // ── main section dots
   { label: 'work',       desc: 'frontend engineering',    route: 'work',       isMain: true },
-  { label: 'writing',    desc: 'thoughts & notes',         route: 'writing',    isMain: true },
+  // { label: 'writing',    desc: 'thoughts & notes',         route: 'posts',      isMain: true },
   { label: 'activities', desc: 'beyond the job',          route: 'activities', isMain: true },
-  { label: 'dots',       desc: 'places & moments',        route: 'dots',       isMain: true },
+  { label: 'moments',       desc: 'places & moments',        route: 'moments',    isMain: true },
   // ── work sub-dots
   { label: 'TeamGRIT',   desc: 'robot control platform',  route: 'work',       parentLabel: 'work' },
   { label: 'Toss',       desc: 'fintech design system',   route: 'work',       parentLabel: 'work' },
   { label: 'GDSC',       desc: 'frontend study lead',     route: 'work',       parentLabel: 'work' },
   { label: 'Onad',       desc: 'twitch ad design',        route: 'work',       parentLabel: 'work' },
   // ── writing sub-dots
-  { label: 'robots',     desc: 'perf lessons from robots',route: 'writing',    parentLabel: 'writing' },
-  { label: 'london',     desc: 'job hunting notes',       route: 'writing',    parentLabel: 'writing' },
-  { label: 'craft',      desc: 'works vs feels right',    route: 'writing',    parentLabel: 'writing' },
+  // { label: 'robots',     desc: 'perf lessons from robots',route: 'posts',      parentLabel: 'writing' },
+  // { label: 'london',     desc: 'job hunting notes',       route: 'posts',      parentLabel: 'writing' },
+  // { label: 'craft',      desc: 'works vs feels right',    route: 'posts',      parentLabel: 'writing' },
   // ── activities sub-dots
   { label: 'meetups',    desc: 'london frontend community',route: 'activities', parentLabel: 'activities' },
   { label: 'side proj',  desc: 'weekly experiments',      route: 'activities', parentLabel: 'activities' },
   // ── dots sub-dots
-  { label: 'tokyo',      desc: '2023.04',                 route: 'dots',       parentLabel: 'dots' },
-  { label: 'porto',      desc: '2024.06',                 route: 'dots',       parentLabel: 'dots' },
-  { label: 'kyoto',      desc: '2023.04',                 route: 'dots',       parentLabel: 'dots' },
-  { label: 'lisbon',     desc: '2024.06',                 route: 'dots',       parentLabel: 'dots' },
+  { label: 'tokyo',      desc: '2023.04',                 route: 'moments',    parentLabel: 'moments' },
+  { label: 'porto',      desc: '2024.06',                 route: 'moments',    parentLabel: 'moments' },
+  { label: 'kyoto',      desc: '2023.04',                 route: 'moments',    parentLabel: 'moments' },
+  { label: 'lisbon',     desc: '2024.06',                 route: 'moments',    parentLabel: 'moments' },
 ]
 
 export default function DotAnimation({

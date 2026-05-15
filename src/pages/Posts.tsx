@@ -1,21 +1,18 @@
 import { posts } from '@/data'
 import { useNavigate } from 'react-router-dom';
 
-export default function Writing() {
+export default function Posts() {
   const navigate = useNavigate();
 
   return (
-    <div className="page page-narrow">
+    <div className="page">
       <div className="page-label">writing</div>
-      <p className="page-intro">
-        Notes on engineering, design, and the gap between them.
-      </p>
       <div className="writelist">
         {posts.map(p => (
           <a
             key={p.id}
             className="writerow"
-            onClick={() => navigate(`/writing/${p.id}`)}
+            onClick={() => navigate(`/posts/${p.id}`)}
           >
             <span className="w-date">— {p.date}</span>
             <span>
