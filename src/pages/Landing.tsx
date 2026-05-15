@@ -26,7 +26,7 @@ export default function Landing() {
           <span className="headline-line2">who engineers the moments users feel.</span>
         </h1>
         <div className="landing-sub">
-          <span>Jen Choi · Based in London</span>
+          <span>Jen(Jeonghye) Choi · Based in London</span>
         </div>
       </div>
       <div className="landing-canvas" ref={wrapRef}>
