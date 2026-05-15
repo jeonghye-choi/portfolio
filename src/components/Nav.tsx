@@ -1,14 +1,33 @@
+import { useEffect, useRef, useState } from 'react'
 import { socialLinks } from '@/data'
 import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function Nav() {
   const navigate = useNavigate()
   const location = useLocation()
+  const [menuOpen, setMenuOpen] = useState(false)
+  const navRef = useRef<HTMLElement>(null)
 
   const linkCls = (n: string) => 'navlink' + (location.pathname.startsWith('/' + n) ? ' active' : '')
 
+  const navTo = (path: string) => {
+    navigate(path)
+    setMenuOpen(false)
+  }
+
+  useEffect(() => {
+    if (!menuOpen) return
+    const handler = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setMenuOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [menuOpen])
+
   return (
-    <nav className="site-nav">
+    <nav className="site-nav" ref={navRef}>
       <a className="brand" onClick={() => navigate('/')}>Jen Choi</a>
       <div className="navlinks">
         <a className={linkCls('work')} onClick={() => { navigate('/work') }}>work</a>
@@ -34,6 +53,27 @@ export default function Nav() {
           </svg>
         </a>
       </div>
+      <button
+        className={'nav-hamburger' + (menuOpen ? ' is-open' : '')}
+        onClick={() => setMenuOpen(v => !v)}
+        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={menuOpen}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+      {menuOpen && (
+        <div className="mobile-nav">
+          <a className={linkCls('work')} onClick={() => navTo('/work')}>work</a>
+          <a className={linkCls('activities')} onClick={() => navTo('/activities')}>activities</a>
+          <a className={linkCls('moments')} onClick={() => navTo('/moments')}>moments</a>
+          <div className="mobile-nav-divider" />
+          <a href={'mailto:' + socialLinks.email} className="mobile-nav-social" onClick={() => setMenuOpen(false)}>email</a>
+          <a href={socialLinks.linkedin} className="mobile-nav-social" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>linkedin</a>
+          <a href={socialLinks.github} className="mobile-nav-social" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>github</a>
+        </div>
+      )}
     </nav>
   )
 }
