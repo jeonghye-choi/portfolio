@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics/react'
+
 import Nav from '@/components/Nav'
 import Landing from '@/pages/Landing'
 import Work from '@/pages/Work'
@@ -48,6 +50,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <AppLayout />
+      <Analytics />
     </BrowserRouter>
   )
 }
