@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 import Nav from '@/components/Nav'
 import Landing from '@/pages/Landing'
@@ -51,6 +52,7 @@ export default function App() {
     <BrowserRouter>
       <AppLayout />
       <Analytics />
+      <SpeedInsights />
     </BrowserRouter>
   )
 }
