@@ -1,24 +1,5 @@
+import { formatDateRange } from "@/utils/formatDate";
 import type { Experience } from "@/data/experiences";
-
-function formatDate(date: string | null) {
-  if (!date) return "Present";
-  const [year, month] = date.split("-");
-  const monthNames = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  return `${monthNames[parseInt(month, 10) - 1]} ${year}`;
-}
 
 export default function ExperienceItem({
   experience,
@@ -32,7 +13,7 @@ export default function ExperienceItem({
         <p className="text-text-h text-base font-medium">{experience.role}</p>
         <p className="text-text mt-1 text-sm">{experience.company}</p>
         <p className="text-text/70 mt-3 text-xs">
-          {formatDate(experience.startDate)} — {formatDate(experience.endDate)}
+          {formatDateRange(experience.startDate, experience.endDate)}
         </p>
         <p className="text-text/70 text-xs">{experience.location}</p>
       </div>
@@ -54,14 +35,14 @@ export default function ExperienceItem({
                   </li>
                 ))}
               </ul>
-              {project.tags.length > 0 && (
+              {project.techStack.length > 0 && (
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
+                  {project.techStack.map((tech) => (
                     <span
-                      key={tag}
+                      key={tech}
                       className="border-border text-text rounded-full border px-2.5 py-0.5 text-xs"
                     >
-                      {tag}
+                      {tech}
                     </span>
                   ))}
                 </div>

@@ -1,7 +1,7 @@
 export interface ExperienceProject {
   title: string;
   bullets: string[];
-  tags: string[];
+  techStack: string[];
 }
 
 export interface Experience {
@@ -35,7 +35,7 @@ export const experiences: Experience[] = [
           "Integrated MediaPipe for real-time face and pose recognition to enable gesture-based remote robot control, delivering low-latency AI-driven interaction in the browser.",
           "Built real-time 2D/3D point cloud visualisations of LiDAR sensor data using WebGL, rendering dense spatial data directly in the browser.",
         ],
-        tags: ["WebSocket", "MediaPipe", "WebGL", "TypeScript"],
+        techStack: ["WebSocket", "MediaPipe", "WebGL", "TypeScript"],
       },
       {
         title: "IEEE QRC Registration Platform",
@@ -44,14 +44,14 @@ export const experiences: Experience[] = [
           "Supported real-time registration, scheduling, and participation for teams across multiple countries, handling concurrent access and time-sensitive coordination.",
           "Implemented UTC-based scheduling with local time conversion at the UI layer for users across Korea, Japan, China, and the United States.",
         ],
-        tags: ["TypeScript", "Express"],
+        techStack: ["TypeScript", "Express"],
       },
       {
         title: "Backend Migration",
         bullets: [
           "Led backend migration from Express to Java Spring Boot for the robot management control system, improving reliability and maintainability across 10+ hardware models.",
         ],
-        tags: ["Spring Boot", "Express"],
+        techStack: ["Spring Boot", "Express"],
       },
     ],
   },
@@ -72,14 +72,14 @@ export const experiences: Experience[] = [
           "Migrated component styling from SCSS to styled-components to resolve style-override conflicts caused by class name collisions across component versions, improving style isolation and consistency for design-to-code handoff.",
           "Built Storybook-based verification workflows for the component library, enabling designers and developers to visually confirm implementation accuracy before release.",
         ],
-        tags: ["React", "TypeScript", "styled-components", "Storybook"],
+        techStack: ["React", "TypeScript", "styled-components", "Storybook"],
       },
       {
         title: "Team Documentation",
         bullets: [
           "Authored procedural documentation for recurring frontend workflows, reducing repetitive onboarding explanations as the team scaled.",
         ],
-        tags: [],
+        techStack: [],
       },
     ],
   },
@@ -98,7 +98,7 @@ export const experiences: Experience[] = [
         bullets: [
           "Created wireframes and high-fidelity prototypes for advertising and streaming platforms using Figma and Adobe XD.",
         ],
-        tags: ["Figma", "Adobe XD"],
+        techStack: ["Figma", "Adobe XD"],
       },
     ],
   },
