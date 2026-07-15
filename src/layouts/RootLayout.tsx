@@ -5,9 +5,7 @@ export default function RootLayout() {
   return (
     <div className="min-h-dvh">
       <Header />
-      <main>
-        <Outlet />
-      </main>
+      <Outlet />
     </div>
   );
 }

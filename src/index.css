@@ -2,31 +2,26 @@
 @import "@fontsource/outfit/400.css";
 @import "@fontsource/outfit/500.css";
 @import "@fontsource/outfit/600.css";
+@import "@fontsource/newsreader/400.css";
+@import "@fontsource/newsreader/500.css";
+@import "@fontsource/newsreader/600.css";
+@import "@fontsource/newsreader/400-italic.css";
 
 @theme {
   --font-sans: "Outfit", system-ui, sans-serif;
+  --font-serif: "Newsreader", Georgia, serif;
   --font-mono: ui-monospace, Consolas, monospace;
 
-  --color-text: #6b6375;
-  --color-text-h: #08060d;
-  --color-bg: #fff;
-  --color-border: #e5e4e7;
-  --color-accent: #aa3bff;
-}
-
-@media (prefers-color-scheme: dark) {
-  @theme {
-    --color-text: #9ca3af;
-    --color-text-h: #f3f4f6;
-    --color-bg: #16171d;
-    --color-border: #2e303a;
-    --color-accent: #c084fc;
-  }
+  --color-text: #9ca3af;
+  --color-text-h: #f3f4f6;
+  --color-bg: #121212;
+  --color-border: #2e303a;
+  --color-accent: #c084fc;
 }
 
 html {
   font-size: 100%;
-  color-scheme: light dark;
+  color-scheme: dark;
 }
 
 @media (max-width: 768px) {
@@ -44,4 +39,14 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+@layer utilities {
+  .bg-header {
+    background-color: rgba(18, 18, 18, 0.7);
+  }
 }

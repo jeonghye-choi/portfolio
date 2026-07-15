@@ -18,7 +18,7 @@ export default function Header() {
     }`;
 
   return (
-    <header className="border-border bg-bg/80 sticky top-0 z-50 h-16 border-b backdrop-blur">
+    <header className="bg-header sticky top-0 z-50 h-16 select-none">
       <Container>
         <div className="flex h-16 items-center justify-between">
           <NavLink to="/" className="text-text-h text-base font-medium">
@@ -65,7 +65,7 @@ export default function Header() {
 
       {/* Mobile menu panel */}
       {isOpen && (
-        <div className="border-border bg-bg border-t md:hidden">
+        <div className="border-border bg-header border-t backdrop-blur-md md:hidden">
           <Container>
             <nav className="flex flex-col gap-1 py-4">
               {navItems.map((item) => (
