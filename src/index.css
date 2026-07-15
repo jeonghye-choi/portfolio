@@ -17,6 +17,7 @@
   --color-bg: #121212;
   --color-border: #2e303a;
   --color-accent: #c084fc;
+  --color-accent-secondary: #7dd3fc;
 }
 
 html {
@@ -47,6 +48,6 @@ button:not(:disabled) {
 
 @layer utilities {
   .bg-header {
-    background-color: rgba(18, 18, 18, 0.7);
+    background-color: rgba(18, 18, 18, 0.9);
   }
 }
