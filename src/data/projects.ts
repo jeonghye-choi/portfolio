@@ -62,4 +62,35 @@ export const projects: Project[] = [
       "Built and deployed a working end-to-end product within a 3-day hackathon.",
     ],
   },
+  {
+    id: "githru-vscode-ext",
+    title: "githru-vscode-ext",
+    event: "Open Source Contribution Academy (NIPA)",
+    role: "Open Source Contributor",
+    startDate: "2022-01",
+    endDate: "2022-12",
+    techStack: ["TypeScript", "React"],
+    githubUrl: "https://github.com/githru/githru-vscode-ext",
+    description:
+      "A VS Code extension for visualising Git repository history. Awarded Excellence among all participating teams.",
+    bullets: [
+      "Built the TemporalFilter component from scratch — including types, data structures, sorting utilities, and UI — enabling users to filter commit history by time range.",
+      "Established design system foundations: color palettes, dark/light theme tokens, font variables, and global styles.",
+    ],
+  },
+  {
+    id: "emotion-diary-pwa",
+    title: "Emotion Diary",
+    event: "Google Developer Student Clubs",
+    role: "Core Member · Team project",
+    startDate: "2021-01",
+    endDate: "2022-12",
+    techStack: ["React", "TypeScript"],
+    description:
+      "A PWA emotion diary built for single parents, developed and shipped as a GDSC team project.",
+    bullets: [
+      "Led weekly frontend study sessions on JavaScript and React for a group of students.",
+      "Built and deployed the PWA leveraging push notifications and native device features.",
+    ],
+  },
 ];

@@ -10,8 +10,8 @@ export interface Experience {
   companyUrl?: string;
   role: string;
   location: string;
-  startDate: string; // "2023-02"
-  endDate: string | null; // null = present
+  startDate: string;
+  endDate: string | null;
   companySummary: string;
   projects: ExperienceProject[];
 }
@@ -80,6 +80,26 @@ export const experiences: Experience[] = [
           "Authored procedural documentation for recurring frontend workflows, reducing repetitive onboarding explanations as the team scaled.",
         ],
         techStack: [],
+      },
+    ],
+  },
+  {
+    id: "assi",
+    company: "ASSI",
+    role: "Frontend Engineer Intern",
+    location: "Seoul, South Korea",
+    startDate: "2020-10",
+    endDate: "2020-10",
+    companySummary:
+      "Built an admin dashboard to visualise user behaviour data.",
+    projects: [
+      {
+        title: "Admin Dashboard",
+        bullets: [
+          "Built a React and Firebase-based admin dashboard to visualise user behaviour data.",
+          "Implemented interactive data visualisations to improve visibility into key user metrics.",
+        ],
+        techStack: ["React", "Firebase"],
       },
     ],
   },
