@@ -1,16 +1,26 @@
-# jenchoi.dev
+# Portfolio
 
-Personal portfolio and blog — built with React, TypeScript, and Vite.
+Personal portfolio site — built with React, TypeScript, and Vite.
+
+🔗 [jenchoi.dev](https://jenchoi.dev)
 
 ## Tech Stack
 
-- React 18
-- TypeScript
+- React 19 + TypeScript
 - Vite
+- Tailwind CSS v4
+- React Router
+- react-markdown (for the Notes section)
 
-## Getting Started
+## Pages
 
-```bash
-npm install
-npm run dev
-```
+- **Main** — interactive constellation background built with Canvas
+- **Projects** — selected projects, solo and team
+- **Experiences** — work history and background
+- **Notes** — a small collection of technical notes, written in Markdown
+- **Labs** — experiments, not projects
+
+## License
+
+All content and code in this repository are personal work and not
+licensed for reuse.
