@@ -3,6 +3,7 @@ import RootLayout from "@/layouts/RootLayout";
 import Main from "@/pages/Main";
 import Projects from "@/pages/Projects";
 import Notes from "@/pages/Notes";
+import NoteDetail from "@/pages/NoteDetail";
 import Experiences from "@/pages/Experiences";
 import Labs from "@/pages/Labs";
 
@@ -14,6 +15,7 @@ export default function App() {
           <Route path="/" element={<Main />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/notes" element={<Notes />} />
+          <Route path="/notes/:slug" element={<NoteDetail />} />
           <Route path="/experiences" element={<Experiences />} />
           <Route path="/labs" element={<Labs />} />
         </Route>

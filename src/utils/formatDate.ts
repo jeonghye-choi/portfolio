@@ -24,3 +24,18 @@ export function formatDateRange(start: string, end: string | null) {
   if (start === end) return formatDate(start);
   return `${formatDate(start)} — ${formatDate(end)}`;
 }
+
+export function formatShortDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString("en-GB", {
+    year: "numeric",
+    month: "short",
+  });
+}
+
+export function formatLongDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString("en-GB", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}

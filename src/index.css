@@ -7,6 +7,9 @@
 @import "@fontsource/newsreader/600.css";
 @import "@fontsource/newsreader/400-italic.css";
 
+@plugin "@tailwindcss/typography";
+
+/* ===== Theme tokens ===== */
 @theme {
   --font-sans: "Outfit", system-ui, sans-serif;
   --font-serif: "Newsreader", Georgia, serif;
@@ -20,6 +23,7 @@
   --color-accent-secondary: #7dd3fc;
 }
 
+/* ===== Base styles ===== */
 html {
   font-size: 100%;
   color-scheme: dark;
@@ -46,8 +50,85 @@ button:not(:disabled) {
   cursor: pointer;
 }
 
+/* ===== Utilities ===== */
 @layer utilities {
   .bg-header {
     background-color: rgba(18, 18, 18, 0.9);
   }
+}
+
+/* ===== Notes page ===== */
+.note-content {
+  h2 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-text-h);
+  }
+
+  h3 {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-text-h);
+  }
+
+  p {
+    color: var(--color-text);
+  }
+
+  strong {
+    color: var(--color-text-h);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent-secondary);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  a {
+    color: var(--color-accent-secondary);
+    text-decoration: underline;
+  }
+
+  ul,
+  ol {
+    color: var(--color-text);
+  }
+
+  li::marker {
+    color: var(--color-text-h);
+  }
+
+  blockquote {
+    border-left-color: var(--color-accent-secondary);
+    color: var(--color-text);
+  }
+
+  code {
+    background-color: var(--color-border);
+    color: var(--color-accent-secondary);
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.375rem;
+  }
+
+  hr {
+    border-color: var(--color-border);
+  }
+}
+
+.note-card-title {
+  padding-bottom: 2px;
+  background-image: linear-gradient(
+    var(--color-accent-secondary),
+    var(--color-accent-secondary)
+  );
+  background-size: 0% 2px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease-out;
+}
+
+.group:hover .note-card-title {
+  background-size: 100% 2px;
 }

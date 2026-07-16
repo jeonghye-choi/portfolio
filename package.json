@@ -13,13 +13,17 @@
     "@fontsource/newsreader": "^5.2.10",
     "@fontsource/outfit": "^5.2.8",
     "@tailwindcss/vite": "^4.3.2",
+    "js-yaml": "^5.2.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.18.1",
     "tailwindcss": "^4.3.2"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/js-yaml": "^4.0.9",
     "@types/node": "^24.13.2",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
