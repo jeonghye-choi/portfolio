@@ -4,13 +4,24 @@ import { Code2, ExternalLink } from "lucide-react";
 export default function LabItem({ lab }: { lab: Lab }) {
   return (
     <div className="border-border border-b py-10 last:border-b-0">
-      <div className="border-border aspect-21/9 w-full overflow-hidden rounded-md border">
-        <img
+      {lab.demoUrl.endsWith(".mp4") ? (
+        <video
+          aria-label={`${lab.title} demo`}
+          className="border-border block aspect-video w-full rounded-md border object-contain"
           src={lab.demoUrl}
-          alt={lab.title}
-          className="h-full w-full object-cover"
+          controls
+          playsInline
+          preload="metadata"
         />
-      </div>
+      ) : (
+        <div className="border-border aspect-21/9 w-full overflow-hidden rounded-md border">
+          <img
+            src={lab.demoUrl}
+            alt={lab.title}
+            className="h-full w-full object-cover"
+          />
+        </div>
+      )}
 
       <div className="mt-6 flex items-center gap-3">
         <p className="text-text-h font-serif text-2xl font-medium">
@@ -20,6 +31,7 @@ export default function LabItem({ lab }: { lab: Lab }) {
           {lab.liveUrl && (
             <a
               href={lab.liveUrl}
+              aria-label={`Open ${lab.title} live demo`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-text/60 hover:text-accent-secondary transition-colors"
@@ -30,6 +42,7 @@ export default function LabItem({ lab }: { lab: Lab }) {
           {lab.githubUrl && (
             <a
               href={lab.githubUrl}
+              aria-label={`View ${lab.title} source code`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-text/60 hover:text-accent-secondary transition-colors"

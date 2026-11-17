@@ -16,6 +16,16 @@ function getDemoPath(id: string): string {
 
 export const labs: Lab[] = [
   {
+    id: "the-first-snow",
+    title: "The First Snow",
+    description:
+      "An interactive artwork that brings a miniature Christmas village to life. Press and move your pointer to make snow.",
+    tools: ["React", "TypeScript", "PixiJS"],
+    tags: ["interactive", "motion"],
+    liveUrl: "https://snow.jenchoi.dev/",
+    demoUrl: "/images/labs/the-first-snow/demo.mp4",
+  },
+  {
     id: "hand-tracking",
     title: "Hand Tracking",
     description:
