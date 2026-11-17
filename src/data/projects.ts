@@ -14,18 +14,20 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "london-in-dance",
-    title: "London in Dance",
+    id: "the-story-behind",
+    title: "The Story Behind",
     event: "Solo Project",
+    role: "Design, Development & Editorial",
     startDate: "2026-06",
     endDate: null,
-    techStack: ["React", "TypeScript", "Vercel", "Claude AI"],
-    liveUrl: "https://londonindance.jenchoi.dev",
+    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+    liveUrl: "https://thestorybehind.jenchoi.dev/",
     description:
-      "A performance discovery platform bringing together ballet and contemporary dance listings across London.",
+      "An independent London art journal bringing together curated performances, photography, and personal essays. Originally launched as London in Dance.",
     bullets: [
-      "Directed an AI coding agent (Claude) to build a crawling pipeline aggregating live performance listings from Sadler's Wells, the Royal Ballet and Opera, and the London Coliseum into a single platform, solo-built from concept to deployment in one week.",
-      "Optimised for mobile-first usage based on Vercel Analytics data showing 68% of traffic from mobile devices, with the UK and Korea as the top two visitor markets.",
+      "Redesigned v2 around a responsive magazine cover and a What’s On poster grid linking directly to official event pages.",
+      "Built Now on, Ending soon, and Coming up views with London-local date logic, showing days remaining for running performances and opening dates for upcoming ones.",
+      "Created a photography-led Stories archive grouped by year and published the first essay, Auguries of Innocence, with performance photography and production credits.",
     ],
   },
   {
