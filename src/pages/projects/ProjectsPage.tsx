@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
-import ProjectItem from "@/components/ProjectItem";
-import { projects } from "@/data/projects";
+import ProjectItem from "./ProjectItem";
+import { projects } from "./projects";
 import PageHeader from "@/components/PageHeader";
 
 export default function Projects() {

@@ -1,4 +1,4 @@
-import type { Project } from "@/data/projects";
+import type { Project } from "./projects";
 import { formatDateRange } from "@/utils/formatDate";
 
 export default function ProjectItem({ project }: { project: Project }) {

@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
-import ConstellationBackground from "@/components/ConstellationBackground";
+import ConstellationBackground from "./ConstellationBackground";
 
-export default function Main() {
+export default function Home() {
   return (
     <section className="relative -mt-16 h-dvh overflow-hidden select-none">
       <ConstellationBackground />

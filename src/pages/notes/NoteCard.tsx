@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { NoteMeta } from "@/lib/notes";
+import type { NoteMeta } from "./notes";
 import { formatShortDate } from "@/utils/formatDate";
 
 export default function NoteCard({ note }: { note: NoteMeta }) {

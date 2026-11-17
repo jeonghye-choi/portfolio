@@ -1,5 +1,5 @@
 import { formatDateRange } from "@/utils/formatDate";
-import type { Experience } from "@/data/experiences";
+import type { Experience } from "./experiences";
 
 export default function ExperienceItem({
   experience,

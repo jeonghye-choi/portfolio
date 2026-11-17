@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
-import ExperienceItem from "@/components/ExperienceItem";
-import { experiences } from "@/data/experiences";
+import ExperienceItem from "./ExperienceItem";
+import { experiences } from "./experiences";
 import PageHeader from "@/components/PageHeader";
 
 export default function Experiences() {

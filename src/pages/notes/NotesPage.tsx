@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
-import NoteCard from "@/components/NoteCard";
-import { getAllNotes } from "@/lib/notes";
+import NoteCard from "./NoteCard";
+import { getAllNotes } from "./notes";
 import PageHeader from "@/components/PageHeader";
 
 export default function Notes() {

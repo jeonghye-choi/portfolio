@@ -1,32 +1,13 @@
-import type { Lab } from "@/data/labs";
+import type { Lab } from "./labs";
 import { Code2, ExternalLink } from "lucide-react";
 
 export default function LabItem({ lab }: { lab: Lab }) {
   return (
-    <div className="border-border border-b py-10 last:border-b-0">
-      {lab.demoUrl.endsWith(".mp4") ? (
-        <video
-          aria-label={`${lab.title} demo`}
-          className="border-border block aspect-video w-full rounded-md border object-contain"
-          src={lab.demoUrl}
-          controls
-          playsInline
-          preload="metadata"
-        />
-      ) : (
-        <div className="border-border aspect-21/9 w-full overflow-hidden rounded-md border">
-          <img
-            src={lab.demoUrl}
-            alt={lab.title}
-            className="h-full w-full object-cover"
-          />
-        </div>
-      )}
-
-      <div className="mt-6 flex items-center gap-3">
-        <p className="text-text-h font-serif text-2xl font-medium">
+    <article className="border-border border-b pb-10 last:border-b-0 last:pb-0 md:pb-14">
+      <div className="flex items-center gap-3">
+        <h2 className="text-text-h font-serif text-2xl font-medium">
           {lab.title}
-        </p>
+        </h2>
         <div className="flex items-center gap-2">
           {lab.liveUrl && (
             <a
@@ -77,6 +58,27 @@ export default function LabItem({ lab }: { lab: Lab }) {
           </span>
         ))}
       </div>
-    </div>
+
+      <div className="mt-6">
+        {lab.demoUrl.endsWith(".mp4") ? (
+          <video
+            aria-label={`${lab.title} demo`}
+            className="border-border block aspect-video w-full rounded-md border object-contain"
+            src={lab.demoUrl}
+            controls
+            playsInline
+            preload="metadata"
+          />
+        ) : (
+          <div className="border-border aspect-21/9 w-full overflow-hidden rounded-md border">
+            <img
+              src={lab.demoUrl}
+              alt={lab.title}
+              className="h-full w-full object-cover"
+            />
+          </div>
+        )}
+      </div>
+    </article>
   );
 }

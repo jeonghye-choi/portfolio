@@ -2,32 +2,33 @@ import { useEffect, useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import Container from "@/components/Container";
-import { getNoteBySlug, type NoteWithContent } from "@/lib/notes";
+import { getNoteBySlug, type NoteWithContent } from "./notes";
 import { formatLongDate } from "@/utils/formatDate";
-import { SITE } from "@/data/site";
 
 export default function NoteDetail() {
   const { slug } = useParams();
-  const [note, setNote] = useState<NoteWithContent | undefined>();
-  const [notFound, setNotFound] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loaded, setLoaded] = useState<{
+    slug: string;
+    note: NoteWithContent | undefined;
+  }>();
 
   useEffect(() => {
     if (!slug) return;
-    setLoading(true);
-    getNoteBySlug(slug).then((result) => {
-      if (result) {
-        setNote(result);
-      } else {
-        setNotFound(true);
-      }
-      setLoading(false);
+    let active = true;
+
+    getNoteBySlug(slug).then((note) => {
+      if (active) setLoaded({ slug, note });
     });
+
+    return () => {
+      active = false;
+    };
   }, [slug]);
 
-  if (loading) return null;
-  if (notFound) return <Navigate to="/notes" replace />;
-  if (!note) return null;
+  if (!slug) return <Navigate to="/notes" replace />;
+  if (loaded?.slug !== slug) return null;
+  const { note } = loaded;
+  if (!note) return <Navigate to="/notes" replace />;
 
   return (
     <Container>
@@ -78,7 +79,7 @@ export default function NoteDetail() {
 
         <div className="border-border mt-16 flex items-center justify-between border-t pt-8">
           <a
-            href={SITE.linkedinUrl}
+            href="https://www.linkedin.com/in/jeonghye-choi"
             target="_blank"
             rel="noopener noreferrer"
             className="text-accent-secondary text-sm font-medium hover:underline"
