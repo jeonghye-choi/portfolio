@@ -62,7 +62,7 @@ export const projects: Project[] = [
       "Vercel",
       "Railway",
     ],
-    liveUrl: "https://mentytarget-two.vercel.app",
+    liveUrl: "https://mentytarget.vercel.app/",
     description:
       "An AI-powered platform that ranks candidate drug targets for a searched disease using genomic and literature data, condensing a manual research process into an instant, explainable report.",
     bullets: [
