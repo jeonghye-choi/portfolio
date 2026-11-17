@@ -1,8 +1,13 @@
 ---
-title: "Exploring Latency and Codec Choices for Various Camera Types"
-date: "2024-07-12"
-tags: ["codecs", "hardware"]
-summary: "Comparing latency across USB, MIPI CSI, network, and GMSL cameras, and how codec choice compounds the difference in real-time systems."
+{
+  "title": "Exploring Latency and Codec Choices for Various Camera Types",
+  "date": "2024-07-12",
+  "tags": [
+    "codecs",
+    "hardware"
+  ],
+  "summary": "Comparing latency across USB, MIPI CSI, network, and GMSL cameras, and how codec choice compounds the difference in real-time systems."
+}
 ---
 
 Building the robot control interface at TeamGRIT meant working with several different camera types at once — not because I chose to, but because the hardware we integrated with simply came that way. Each one had its own latency profile, and I learned quickly that "camera" isn't one thing when you're building for real-time control.

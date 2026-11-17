@@ -1,8 +1,12 @@
 ---
-title: "Network Design: Structure and Architecture"
-date: "2024-04-21"
-tags: ["systems"]
-summary: "Notes on what makes a network design efficient and stable, and how structural choices affect reliability under real usage."
+{
+  "title": "Network Design: Structure and Architecture",
+  "date": "2024-04-21",
+  "tags": [
+    "systems"
+  ],
+  "summary": "Notes on what makes a network design efficient and stable, and how structural choices affect reliability under real usage."
+}
 ---
 
 Most of what I know about network design didn't come from a course — it came from watching a system misbehave and having to figure out why. Robot control systems make this especially visible: a bad network topology doesn't just slow things down, it turns into a robot that hesitates or drifts off-course.

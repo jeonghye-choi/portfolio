@@ -1,33 +1,12 @@
-import { useEffect, useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import Container from "@/components/Container";
-import { getNoteBySlug, type NoteWithContent } from "./notes";
+import { getNoteBySlug } from "./notes";
 import { formatLongDate } from "@/utils/formatDate";
 
 export default function NoteDetail() {
   const { slug } = useParams();
-  const [loaded, setLoaded] = useState<{
-    slug: string;
-    note: NoteWithContent | undefined;
-  }>();
-
-  useEffect(() => {
-    if (!slug) return;
-    let active = true;
-
-    getNoteBySlug(slug).then((note) => {
-      if (active) setLoaded({ slug, note });
-    });
-
-    return () => {
-      active = false;
-    };
-  }, [slug]);
-
-  if (!slug) return <Navigate to="/notes" replace />;
-  if (loaded?.slug !== slug) return null;
-  const { note } = loaded;
+  const note = slug ? getNoteBySlug(slug) : undefined;
   if (!note) return <Navigate to="/notes" replace />;
 
   return (

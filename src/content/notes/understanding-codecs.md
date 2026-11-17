@@ -1,8 +1,13 @@
 ---
-title: "Understanding Codecs"
-date: "2024-07-12"
-tags: ["codecs", "realtime"]
-summary: "Notes on how video codecs evolved, and why the choice between software, GPU, and hardware decoding matters more than it seems."
+{
+  "title": "Understanding Codecs",
+  "date": "2024-07-12",
+  "tags": [
+    "codecs",
+    "realtime"
+  ],
+  "summary": "Notes on how video codecs evolved, and why the choice between software, GPU, and hardware decoding matters more than it seems."
+}
 ---
 
 I first took codecs seriously while building a real-time interface for camera and sensor data at TeamGRIT. Before that, video just played — I never thought about what was happening underneath. But in a robot control interface, a one-second delay can mean an actual malfunction, and that's when I learned how much a single codec choice can shape the felt quality of the result.

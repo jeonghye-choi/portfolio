@@ -1,8 +1,12 @@
 ---
-title: "Understanding Docker Multi-Stage Builds"
-date: "2024-07-12"
-tags: ["docker"]
-summary: "What multi-stage builds solve, and why leaner Docker images end up mattering more than they seem to at first."
+{
+  "title": "Understanding Docker Multi-Stage Builds",
+  "date": "2024-07-12",
+  "tags": [
+    "docker"
+  ],
+  "summary": "What multi-stage builds solve, and why leaner Docker images end up mattering more than they seem to at first."
+}
 ---
 
 The first Docker images I shipped were embarrassingly large — everything from build tools to source files baked into a single image that had no business being in production. Multi-stage builds were the fix, and understanding _why_ they work changed how I think about builds in general.
